@@ -1,9 +1,5 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import { common } from 'server/middleware/common';
 
-import { NextApiRequest, NextApiResponse } from 'next';
-
-const handler = (req: NextApiRequest, res: NextApiResponse) => {
-  res.status(200).json({ name: 'John Doe' });
-};
-
-export default handler;
+export default common().get((req, res) => {
+  res.success({ data: { name: 'John Doe' } });
+});
