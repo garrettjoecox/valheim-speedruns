@@ -1,0 +1,41 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id       Int      @id @default(autoincrement())
+  name     String
+  email    String   @unique
+  password String
+}
+
+model Category {
+  id        Int          @id @default(autoincrement())
+  name      String
+  rules     String
+}
+
+model Leaderboard {
+  id         Int          @id @default(autoincrement())
+  categoryId Int
+  category Category       @relation(fields: [categoryId], references: [id])
+}
+
+model Submission {
+  id            Int         @id @default(autoincrement())
+  leaderboardId Int
+  leaderboard   Leaderboard @relation(fields: [leaderboardId], references: [id])
+  userId        Int
+  user          User        @relation(fields: [userId], references: [id])
+  time          Int
+  proofUrl      String
+  createdAt     DateTime
+}
