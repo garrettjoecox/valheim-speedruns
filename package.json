@@ -17,13 +17,21 @@
     "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.1.5",
     "@prisma/client": "^2.17.0",
+    "bcryptjs": "^2.4.3",
+    "cookies": "^0.8.0",
+    "formik": "^2.2.6",
     "framer-motion": "^3.6.7",
+    "jsonwebtoken": "^8.5.1",
     "next": "latest",
     "next-connect": "^0.10.0",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "yup": "^0.32.9"
   },
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/cookies": "^0.7.6",
+    "@types/jsonwebtoken": "^8.5.0",
     "@types/node": "^14.14.25",
     "@types/react": "^17.0.1",
     "@typescript-eslint/eslint-plugin": "^4.15.2",

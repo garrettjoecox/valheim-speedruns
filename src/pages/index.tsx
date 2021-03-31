@@ -18,6 +18,7 @@ import {
 import { Category, Submission, User } from '@prisma/client';
 import { GetServerSideProps } from 'next';
 import Image from 'next/image';
+import NextLink from 'next/link';
 import React, { FC, useState } from 'react';
 import { db } from 'server/services/db';
 
@@ -53,7 +54,11 @@ const Layout: FC = ({ children }) => (
           </Text>
         </Flex>
         <Spacer />
-        <Button variant="ghost">Login</Button>
+        <NextLink href="/signup">
+          <Button variant="ghost" href="/signup">
+            Submit Run
+          </Button>
+        </NextLink>
       </Container>
     </Box>
     <Box color="white" position="relative" zIndex={1} flex={1} maxH="100%" overflowY="auto">
@@ -66,8 +71,8 @@ const CategorizedLeaderboard: FC<{ data: IncludedCategory[] }> = ({ data }) => {
   const [activeCategory, setActiveCategory] = useState(0);
 
   return (
-    <Box marginY="4">
-      <ButtonGroup isAttached>
+    <Box marginY="4" textAlign="center">
+      <ButtonGroup isAttached size="sm">
         {data.map((category, index) => (
           <Button
             colorScheme="orange"

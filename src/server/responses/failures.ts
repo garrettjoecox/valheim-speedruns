@@ -9,6 +9,10 @@ export enum FailureCode {
 
   // 401 - Unauthorized
   F_401000 = 'F_401000',
+  F_401001 = 'F_401001', // middleware/ensureAuthed - No token found
+  F_401002 = 'F_401002', // middleware/ensureAuthed - Invalid token scheme
+  F_401003 = 'F_401003', // middleware/ensureAuthed - Expired token
+  F_401004 = 'F_401004', // middleware/ensureAuthed - Token for invalid user
 
   // 403 - Forbidden
   F_403000 = 'F_403000',
